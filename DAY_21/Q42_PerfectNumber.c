@@ -1,0 +1,23 @@
+//PROGRAM NO 42 = WRITE A PROGRAM TO CHECK IF A NUMBER IS A PERFACT NUMBER.
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    for (int i = 1; i < num; i++) {
+        if (num % i == 0) {
+            sum += i;
+        }
+    }
+
+    if (sum == num && num != 0) {
+        printf("%d is a Perfect number\n", num);
+    } else {
+        printf("%d is not a Perfect number\n", num);
+    }
+
+    return 0;
+}
