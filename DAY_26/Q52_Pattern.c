@@ -2,26 +2,19 @@
 #include <stdio.h>
 
 int main() {
-    int n = 3; // half-height (rows above and including middle)
+    int rows = 5;
+    int mid = (rows + 1) / 2;
 
-    // Upper half (including middle row)
-    for (int i = 1; i <= n; i++) {
-        for (int s = 0; s < n - i; s++) {
-            printf(" ");
+    for (int i = 1; i <= rows; i++) {
+        int stars;
+        if (i <= mid) {
+            stars = 2 * i - 1;
+        } else {
+            stars = 2 * (rows - i + 1) - 1;
         }
-        for (int j = 0; j < 2 * i - 1; j++) {
-            printf("*");
-        }
-        printf("\n");
-    }
 
-    // Lower half
-    for (int i = n - 1; i >= 1; i--) {
-        for (int s = 0; s < n - i; s++) {
-            printf(" ");
-        }
-        for (int j = 0; j < 2 * i - 1; j++) {
-            printf("*");
+        for (int j = 1; j <= stars; j++) {
+            printf("*\n");
         }
         printf("\n");
     }
