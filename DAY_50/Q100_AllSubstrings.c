@@ -1,0 +1,24 @@
+//PROGRAM NO = 100 PRINT ALL AUB-STRINGS OF A STRING.
+#include <stdio.h>
+
+int main() {
+    char str[1000];
+    fgets(str, sizeof(str), stdin);
+
+    int len = 0;
+    while (str[len] != '\0' && str[len] != '\n' && str[len] != '\r') len++;
+
+    int first = 1;
+    for (int i = 0; i < len; i++) {
+        for (int j = i; j < len; j++) {
+            if (!first) printf(",");
+            for (int k = i; k <= j; k++) {
+                printf("%c", str[k]);
+            }
+            first = 0;
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
